@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+
+:root {
+    --red: #e50914;
+    --black: #141414;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: 5px;
+    color:darksalmon;
+    font-family: 'Girassol', cursive;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+header nav a:hover {
+    color:#fff;
+}
+
+.vincenzo {
+    font-size: 16px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/vincezo.jpg');
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    margin-left: 20px;
+}
+
+.vincenzo .container {
+    width: 40%;
+}
+
+.descricao {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.titulo {
+    margin-top: 10%;
+    font-size: 50px;
+}
+
+.botao {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.5s ease all;
+}
+
+.botao:hover {
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.bf {
+    display: block;
+}
+
+.carrossel {
+    margin-top: 10px;
+}
+
+/*responsive*/
+@media screen and (max-width: 700px) {
+    header .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .vincenzo .container {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .botoes {
+        display: flex;
+    }
+}
