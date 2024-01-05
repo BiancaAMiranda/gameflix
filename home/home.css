@@ -37,22 +37,22 @@ header nav a:hover {
     color: darkblue;
 }
 
-.genius {
+.game-preview {
     font-size: 16px;
     background: darkblue;
     height: 400px;
     background-size: cover;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .container {
     margin-left: 20px;
 }
 
-.genius .container {
+.game-preview .container {
     width: 40%;
 }
 
@@ -62,7 +62,7 @@ header nav a:hover {
 }
 
 .titulo {
-    margin-top: 10%;
+       margin-top: 10%;
     font-size: 50px;
 }
 
@@ -96,6 +96,55 @@ header nav a:hover {
 
 .carrossel {
     margin-top: 10px;
+}
+
+.game-div{
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maingame{
+    display: grid;
+    grid-template-areas: 'verde vermelho' 'amarelo azul';
+    grid-gap: 5px;
+    border: 5px solid #000000;
+    background-color: #000000;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+}
+
+.blue{
+    grid-area: blue;
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+}
+
+.blue{
+    grid-area: azul;
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+}
+
+.red{
+    grid-area: vermelho;
+    background-color: red;
+    border-top-right-radius: 100%;
+}
+
+.yellow{
+    grid-area: amarelo;
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+}
+
+.green{
+    grid-area: verde;
+    background-color: green;
+    border-top-left-radius: 100%;
 }
 
 /*responsive*/
