@@ -147,6 +147,10 @@ header nav a:hover {
     border-top-left-radius: 100%;
 }
 
+.selected{
+    opacity: 0.4;
+}
+
 /*responsive*/
 @media screen and (max-width: 700px) {
     header .container {
