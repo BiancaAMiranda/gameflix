@@ -12,7 +12,8 @@ const red = document.querySelector('.red');
 const yellow = document.querySelector('.yellow');
 const blue = document.querySelector('.blue');
 
-let shuffleOrder = () => {
+// gerar uma ordem aleatória de números entre 1 e 4 e guardar num array
+let randomOrder = () => {
     console.log('oi')
     for(let c = 0; c < 200; c++) {
         let colorOrder = Math.floor(Math.random() * 4);
@@ -25,6 +26,7 @@ let shuffleOrder = () => {
     }
 }
 
+// relacionar cada número e 1 a 4 a uma cor
 let createColorElement = (color) => {
     if (color == 0){
         return green;
@@ -37,6 +39,7 @@ let createColorElement = (color) => {
     }
 }
 
+// iluminar a cor escolhida e apagar num determinado intervalo de tempo
 let lightColor = (element, number) => {
     number = number * 1000
     setTimeout(() => {
@@ -48,4 +51,4 @@ let lightColor = (element, number) => {
     }, number - 250);
 }
 
-shuffleOrder()
+randomOrder()
