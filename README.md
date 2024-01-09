@@ -3,3 +3,5 @@
 <a href='https://biancaamiranda.github.io/gameflix/'>https://biancaamiranda.github.io/gameflix/</a>
 <br>
 <img src='https://github.com/BiancaAMiranda/gameflix/assets/78173189/b18e150c-5797-453c-a591-e4cf116d34dd'>
+<img src='https://github.com/BiancaAMiranda/gameflix/assets/78173189/1bb193d3-e952-431e-b72e-cd8c44c5bd30'>
+<img src='https://github.com/BiancaAMiranda/gameflix/assets/78173189/edf5375c-fa30-4f18-adcb-420745bfbfc8'>
