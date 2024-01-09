@@ -118,12 +118,6 @@ header nav a:hover {
 }
 
 .blue{
-    grid-area: blue;
-    background-color: blue;
-    border-bottom-right-radius: 100%;
-}
-
-.blue{
     grid-area: azul;
     background-color: blue;
     border-bottom-right-radius: 100%;
