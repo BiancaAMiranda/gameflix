@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.maingame{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    position: relative;
+}
+
+.noughts_crosses{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*grid-template-areas: 'verde vermelho' 'amarelo azul';*/
+    grid-gap: 10px;
+    border: 5px solid white;
+    background-color: darkblue;
+    width: 500px;
+    height: 500px;
+
+    div {
+        background-color: white;
+    }
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 20vh;
+    width: 100%;
+    position: absolute;
+    top: 40vh;
+    background-color: darkblue;
+    z-index: 0;
+}
+
+h2 {
+    margin-left: 100px;
+    margin-right: 100px;
+    color: white;
+    font-family: 'Girassol', cursive;
+    font-size: 40px;
+}
