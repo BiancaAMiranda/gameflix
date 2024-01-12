@@ -9,50 +9,126 @@ const seventh_area = document.getElementById('seventh_area');
 const eighth_area = document.getElementById('eighth_area');
 const nineth_area = document.getElementById('nineth_area');
 
-first_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('first_area');
-    element.innerHTML = 'x'
-    element.style.maxWidthwidth = 'calc(500/3px)'
+let first_area_check = false;
+let second_area_check = false;
+let third_area_check = false;
+let fourth_area_check = false;
+let fifth_area_check = false;
+let sixth_area_check = false;
+let seventht_area_check = false;
+let eighth_area_check = false;
+let nineth_area_check = false;
+
+let round = 0
+
+function firstMove() {
+    var first_player = confirm('clique em ok se quiser fazer a primeira jogada');
+    console.log(first_player)
+    if(first_player === false) {
+        first_area.innerHTML = 'o'
+        round = round + 1
+        player_moves()
+    }
+
+    if(first_player === true) {
+        player_moves()
+    }
 }
 
-second_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('second_area');
-    element.innerHTML = 'x'
+function player_moves() {
+    first_area.onclick = () => {
+        if(first_area_check === false) {
+            first_area.innerHTML = 'x'
+            first_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+    
+    second_area.onclick = () => {
+        if(second_area_check === false) {
+            second_area.innerHTML = 'x'
+            second_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+    
+    third_area.onclick = () => {
+        if(third_area_check === false) {
+            third_area.innerHTML = 'x'
+            third_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+
+    fourth_area.onclick = () =>{
+        if(fourth_area_check === false) {
+            fourth_area.innerHTML = 'x'
+            fourth_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+
+    fifth_area.onclick = () => {
+        if(fifth_area_check === false) {
+            fifth_area.innerHTML = 'x'
+            fifth_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+
+    sixth_area.onclick = () => {
+        if(sixth_area_check === false) {
+            sixth_area.innerHTML = 'x'
+            sixth_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+
+    seventh_area.onclick = () => {
+        if(seventht_area_check === false) {
+            seventh_area.innerHTML = 'x'
+            seventht_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+
+    eighth_area.onclick = () => {
+        if(eighth_area_check === false) {
+            eighth_area.innerHTML = 'x'
+            eighth_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
+
+    nineth_area.onclick = () => {
+        if(nineth_area_check === false) {
+            nineth_area.innerHTML = 'x'
+            nineth_area_check = true
+            round = round + 1
+            computer_move()
+        }
+    }
 }
-third_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('third_area');
-    element.innerHTML = 'x'
+
+function computer_move() {
+    if(round === 1) {
+        console.log('1')
+    }
+    if(round === 2){
+        console.log('2')
+    }
+    if(round === 3){
+        console.log('3')
+    }
+    console.log(round)
 }
-fourth_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('fourth_area');
-    element.innerHTML = 'x'
-}
-fifth_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('fifth_area');
-    element.innerHTML = 'x'
-}
-sixth_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('sixth_area');
-    element.innerHTML = 'x'
-}
-seventh_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('seventh_area');
-    element.innerHTML = 'x'
-}
-eighth_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('eighth_area');
-    element.innerHTML = 'x'
-}
-nineth_area.onclick = () => {
-    //document.getElementById('first_area').innerHTML('<p>x</p>')
-    let element = document.getElementById('nineth_area');
-    element.innerHTML = 'x'
-}
+
+firstMove();
