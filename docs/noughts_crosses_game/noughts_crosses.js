@@ -19,13 +19,13 @@ let seventht_area_check = false;
 let eighth_area_check = false;
 let nineth_area_check = false;
 
-let round = 0
+let round = 1
 
 function firstMove() {
     var first_player = confirm('clique em ok se quiser fazer a primeira jogada');
     console.log(first_player)
     if(first_player === false) {
-        first_area.innerHTML = 'o'
+        fifth_area.innerHTML = 'o'
         round = round + 1
         player_moves()
     }
@@ -36,6 +36,7 @@ function firstMove() {
 }
 
 function player_moves() {
+    console.log(round)
     first_area.onclick = () => {
         if(first_area_check === false) {
             first_area.innerHTML = 'x'
@@ -119,16 +120,73 @@ function player_moves() {
 }
 
 function computer_move() {
-    if(round === 1) {
-        console.log('1')
+    if(round === 2 && fifth_area_check === false){
+        setTimeout(() => {
+            fifth_area.innerHTML = 'o'
+            fifth_area_check = true
+            round = round + 1
+            player_moves()
+        }, 500)
     }
-    if(round === 2){
-        console.log('2')
+    if(round === 2 && fifth_area_check === true) {
+        console.log('aqui')
+        let randomPlay = Math.floor(Math.random() * 9);
+        while(randomPlay === 5) {
+            randomPlay = Math.floor(Math.random() * 9);
+        }
+        randomMove = randomArea(randomPlay)
+        round = round + 1
+        player_moves()
     }
     if(round === 3){
         console.log('3')
     }
     console.log(round)
+}
+
+function randomArea(randomPlay) {
+    if (randomPlay === 1) {
+        setTimeout(() => {
+            first_area.innerHTML = 'o'
+            first_area_check = true
+        }, 500)
+        return
+    }
+    if (randomPlay === 2) {
+        second_area.innerHTML = 'o'
+        second_area_check = true
+        return
+    }
+    if (randomPlay === 3) {
+        third_area.innerHTML = 'o'
+        third_area_check = true
+        return
+    }
+    if (randomPlay === 4) {
+        fourth_area.innerHTML = 'o'
+        fourth_area_check = true
+        return
+    }
+    if (randomPlay === 6) {
+        sixth_area.innerHTML = 'o'
+        sixth_area_check = true
+        return
+    }
+    if (randomPlay === 7) {
+        seventh_area.innerHTML = 'o'
+        seventht_area_check = true
+        return
+    }
+    if (randomPlay === 8) {
+        eighth_area.innerHTML = 'o'
+        eighth_area_check = true
+        return
+    }
+    if (randomPlay === 9) {
+        nineth_area.innerHTML = 'o'
+        nineth_area_check = true
+        return
+    }
 }
 
 firstMove();
