@@ -20,7 +20,7 @@ let eighth_area_check = '';
 let nineth_area_check = '';
 
 let player = true;
-let round = 1
+let round = 0
 
 function firstMove() {
     player = confirm('clique em ok se quiser fazer a primeira jogada');
@@ -32,6 +32,7 @@ function firstMove() {
         }, 500)
         console.log('5:', fifth_area_check)
         round = round + 1
+        console.log('caiu aqui: era pra ser round 1 mas é round', round)
         player = true
         player_moves()
         return
@@ -49,6 +50,7 @@ function player_moves() {
             first_area.innerHTML = 'x'
             first_area_check = 'x'
             round = round + 1
+            console.log('x jogou 1, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -62,6 +64,7 @@ function player_moves() {
             second_area.innerHTML = 'x'
             second_area_check = 'x'
             round = round + 1
+            console.log('x jogou 2, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -74,6 +77,7 @@ function player_moves() {
             third_area.innerHTML = 'x'
             third_area_check = 'x'
             round = round + 1
+            console.log('x jogou 3, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -86,6 +90,7 @@ function player_moves() {
             fourth_area.innerHTML = 'x'
             fourth_area_check = 'x'
             round = round + 1
+            console.log('x jogou 4, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -98,6 +103,7 @@ function player_moves() {
             fifth_area.innerHTML = 'x'
             fifth_area_check = 'x'
             round = round + 1
+            console.log('x jogou 5, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -110,6 +116,7 @@ function player_moves() {
             sixth_area.innerHTML = 'x'
             sixth_area_check = 'x'
             round = round + 1
+            console.log('x jogou 6, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -122,6 +129,7 @@ function player_moves() {
             seventh_area.innerHTML = 'x'
             seventh_area_check = 'x'
             round = round + 1
+            console.log('x jogou 7, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -134,6 +142,7 @@ function player_moves() {
             eighth_area.innerHTML = 'x'
             eighth_area_check = 'x'
             round = round + 1
+            console.log('x jogou 8, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -146,6 +155,7 @@ function player_moves() {
             nineth_area.innerHTML = 'x'
             nineth_area_check = 'x'
             round = round + 1
+            console.log('x jogou 9, round', round)
             player = false
             verifyWin('x');
             computer_move()
@@ -157,17 +167,18 @@ function player_moves() {
 
 function computer_move() {
     console.log('computerMove')
-    if(round === 2 && fifth_area_check === '' && player === false){
+    if(round === 1 && fifth_area_check === '' && player === false){
         setTimeout(() => {
             fifth_area_check = 'o'
             fifth_area.innerHTML = 'o'
             round = round + 1
+            console.log('era pra ser round 2 mas era, round ', round)
             player = true
             player_moves()
         }, 1000)
         return
     }
-    if(round === 2 && fifth_area_check === 'x' && player === false) {
+    if(round === 1 && fifth_area_check === 'x' && player === false) {
         console.log('aqui')
         let randomPlay = Math.floor(Math.random() * 9) + 1;
         while(randomPlay === 5) {
@@ -175,24 +186,22 @@ function computer_move() {
         }
         randomMove = randomArea(randomPlay)
         round = round + 1
+        console.log('era pra ser round 2 mas era, round ', round)
         player = true
         player_moves()
         return
     }
-    if(round >= 3 && player === false){
+    if(round >= 2 && round < 9 && player === false){
         let win = verifyPossibleWin()
         console.log('tem possibilidade de ganhar', win)
         if (win === false) {
             strategy()
-            round = round + 1
-            player = true
-            player_moves()
             return
         }
         console.log(round)
+        console.log('round de estratégia ', round)
         return
     }
-    console.log(round)
 }
 
 function randomArea(randomPlay) {
@@ -201,7 +210,7 @@ function randomArea(randomPlay) {
             first_area_check = 'o'
             first_area.innerHTML = 'o'
         }, 500)
-        console.log('1:', first_area_check)
+        console.log('o jogou 1 round ', round)
         verifyWin('o')
         return
     }
@@ -210,7 +219,7 @@ function randomArea(randomPlay) {
             second_area_check = 'o'
             second_area.innerHTML = 'o'
         }, 500)
-        console.log('2:', second_area_check)
+        console.log('o jogou 2 round ', round)
         verifyWin('o')
         return
     }
@@ -219,6 +228,7 @@ function randomArea(randomPlay) {
             third_area_check = 'o'
             third_area.innerHTML = 'o'
         }, 500)
+        console.log('o jogou 3 round ', round)
         verifyWin('o')
         return
     }
@@ -227,7 +237,7 @@ function randomArea(randomPlay) {
             fourth_area_check = 'o'
             fourth_area.innerHTML = 'o'
         }, 500)
-        console.log('4:', fourth_area_check)
+        console.log('o jogou 4 round ', round)
         verifyWin('o')
         return
     }
@@ -236,7 +246,7 @@ function randomArea(randomPlay) {
             sixth_area_check = 'o'
             sixth_area.innerHTML = 'o'
         }, 500)
-        console.log('6:', sixth_area_check)
+        console.log('o jogou 6 round ', round)
         verifyWin('o')
         return
     }
@@ -245,7 +255,7 @@ function randomArea(randomPlay) {
             seventh_area_check = 'o'
             seventh_area.innerHTML = 'o'
         }, 500)
-        console.log('7:', seventh_area_check)
+        console.log('o jogou 7 round ', round)
         verifyWin('o')
         return
     }
@@ -254,7 +264,7 @@ function randomArea(randomPlay) {
             eighth_area_check = 'o'
             eighth_area.innerHTML = 'o'
         }, 500)
-        console.log('8:', eighth_area_check)
+        console.log('o jogou 8 round ', round)
         verifyWin('o')
         return
     }
@@ -263,7 +273,7 @@ function randomArea(randomPlay) {
             nineth_area_check = 'o'
             nineth_area.innerHTML = 'o'
         }, 500)
-        console.log('9:', nineth_area_check)
+        console.log('o jogou 9 round ', round)
         verifyWin('o')
         return
     }
@@ -278,6 +288,9 @@ function strategy() {
         }, 500)
         console.log('3:', third_area_check)
         verifyWin('o')
+        round = round + 1
+        player = true
+        player_moves()
         return
     }
     if (first_area_check === 'x' && third_area_check === 'x' && second_area_check === '') {
@@ -286,7 +299,10 @@ function strategy() {
             second_area.innerHTML = 'o'
         }, 500)
         console.log('2:', second_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (first_area_check === 'x' && fourth_area_check === 'x' && seventh_area_check === '') {
@@ -295,7 +311,10 @@ function strategy() {
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (first_area_check === 'x' && fifth_area_check === 'x' && nineth_area_check === '') {
@@ -304,7 +323,10 @@ function strategy() {
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (first_area_check === 'x' && seventh_area_check === 'x' && fourth_area_check === '') {
@@ -313,7 +335,10 @@ function strategy() {
             fourth_area.innerHTML = 'o'
         }, 500)
         console.log('4:', fourth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (second_area_check === 'x' && third_area_check === 'x' && first_area_check === '') {
@@ -322,7 +347,10 @@ function strategy() {
             first_area.innerHTML = 'o'
         }, 500)
         console.log('1:', first_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (second_area_check === 'x' && fifth_area_check === 'x' && eighth_area_check === '') {
@@ -331,7 +359,10 @@ function strategy() {
             eighth_area.innerHTML = 'o'
         }, 500)
         console.log('8:', eighth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (third_area_check === 'x' && sixth_area_check === 'x' && nineth_area_check === '') {
@@ -340,7 +371,10 @@ function strategy() {
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (third_area_check === 'x' && fifth_area_check === 'x' && seventh_area_check === '') {
@@ -349,7 +383,10 @@ function strategy() {
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (third_area_check === 'x' && nineth_area_check === 'x' && sixth_area_check === '') {
@@ -358,7 +395,10 @@ function strategy() {
             sixth_area.innerHTML = 'o'
         }, 500)
         console.log('6:', sixth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (fourth_area_check === 'x' && fifth_area_check === 'x' && sixth_area_check === '') {
@@ -367,7 +407,10 @@ function strategy() {
             sixth_area.innerHTML = 'o'
         }, 500)
         console.log('6:', sixth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (fourth_area_check === 'x' && seventh_area_check === 'x' && first_area_check === '') {
@@ -376,7 +419,10 @@ function strategy() {
             first_area.innerHTML = 'o'
         }, 500)
         console.log('1:', first_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (fifth_area_check === 'x' && sixth_area_check === 'x' &&  fourth_area_check === '') {
@@ -385,7 +431,10 @@ function strategy() {
             fourth_area.innerHTML = 'o'
         }, 500)
         console.log('4:', fourth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (fifth_area_check === 'x' && seventh_area_check === 'x' &&  third_area_check === '') {
@@ -394,7 +443,10 @@ function strategy() {
             third_area.innerHTML = 'o'
         }, 500)
         console.log('3:', third_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (fifth_area_check === 'x' && eighth_area_check === 'x' &&  second_area_check === '') {
@@ -403,7 +455,10 @@ function strategy() {
             second_area.innerHTML = 'o'
         }, 500)
         console.log('2:', second_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (sixth_area_check === 'x' && nineth_area_check === 'x' && third_area_check === '') {
@@ -412,7 +467,10 @@ function strategy() {
             third_area.innerHTML = 'o'
         }, 500)
         console.log('3:', third_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (seventh_area_check === 'x' && nineth_area_check === 'x' && eighth_area_check === '') {
@@ -421,7 +479,10 @@ function strategy() {
             eighth_area.innerHTML = 'o'
         }, 500)
         console.log('8:', eighth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (seventh_area_check === 'x' && eighth_area_check === 'x' && nineth_area_check === '') {
@@ -430,7 +491,10 @@ function strategy() {
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (nineth_area_check === 'x' && eighth_area_check === 'x' && seventh_area_check === '') {
@@ -439,7 +503,10 @@ function strategy() {
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     if (nineth_area_check === 'x' && fifth_area_check === 'x' && first_area_check === '') {
@@ -448,7 +515,10 @@ function strategy() {
             first_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        round = round + 1
+        player = true
         verifyWin('o')
+        player_moves()
         return
     }
     let again = true;
@@ -457,44 +527,49 @@ function strategy() {
         randomPlay = Math.floor(Math.random() * 9) + 1;
         console.log('randomPlay: ', randomPlay)
         if(randomPlay === 9 && nineth_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 8)+ 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 8) + 1;
+            console.log('randomPlay: 9 ocupado', nineth_area_check)
         }
         else if(randomPlay === 8 && eighth_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 7)+ 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 8 ocupado', eighth_area_check)
         }
         else if(randomPlay === 7 && seventh_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 6) + 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 7 ocupado', seventh_area_check)
         }
         else if(randomPlay === 6 && sixth_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 5) + 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 6 ocupado', sixth_area_check)
         }
         else if(randomPlay === 5 && fifth_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 4) + 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 5 ocupado', fifth_area_check)
         }
         else if(randomPlay === 4 && fourth_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 3) + 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 4 ocupado', fourth_area_check)
         }
         else if(randomPlay === 3 && third_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 2) + 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 3 ocupado', third_area_check)
         }
         else if(randomPlay === 2 && second_area_check !== '') {
-            randomPlay = Math.floor(Math.random() * 1) + 1;
-            console.log('randomPlay: ', randomPlay)
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 2 ocupado', second_area_check)
+        } else if(randomPlay === 1 && fifth_area_check !== '') {
+            randomPlay = Math.floor(Math.random() * 9) + 1;
+            console.log('randomPlay: 1 ocupado', first_area_check)
         } else {
             again = false
+            randomMove = randomArea(randomPlay)
+            console.log('random round')
+            round = round + 1
+            player = true
+            verifyWin('o')
+            player_moves()
         }
     }
-    randomMove = randomArea(randomPlay)
-    round = round + 1
-    player = true
-    player_moves()
     return
 }
 
@@ -652,6 +727,7 @@ function verifyPossibleWin() {
 
 function verifyWin(play) {
     console.log('verificando vitória')
+    console.log('round:', round)
     console.log(`1: ${first_area_check}, 2: ${second_area_check}, 3: ${third_area_check}, \n 4: ${fourth_area_check}, 5: ${fifth_area_check}, 6: ${sixth_area_check}, \n 7: ${seventh_area_check}, 8: ${eighth_area_check}, 9: ${nineth_area_check}`)
     if (   first_area_check === play && fifth_area_check === play && nineth_area_check === play
         || fifth_area_check === play && nineth_area_check === play && first_area_check === play
@@ -682,6 +758,8 @@ function verifyWin(play) {
                 location.reload();
                 return true
             }, 100)
+    } else if(round === 9) {
+        alert('Deu velha :(\n Clique em OK para iniciar um novo jogo')
     }
     return false
 }
