@@ -29,9 +29,10 @@ function firstMove() {
         setTimeout(() => {
             fifth_area.innerHTML = 'o'
             fifth_area_check = 'o'
-            console.log('5:', fifth_area_check)
-            round = round + 1
         }, 500)
+        console.log('5:', fifth_area_check)
+        round = round + 1
+        player = true
         player_moves()
         return
     }
@@ -43,14 +44,13 @@ function firstMove() {
 }
 
 function player_moves() {
-    console.log('player_move')
-    verifyWin('x');
     first_area.onclick = () => {
         if(first_area_check === '' && player === true) {
             first_area.innerHTML = 'x'
             first_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -63,6 +63,7 @@ function player_moves() {
             second_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -74,6 +75,7 @@ function player_moves() {
             third_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -85,6 +87,7 @@ function player_moves() {
             fourth_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -96,6 +99,7 @@ function player_moves() {
             fifth_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -107,6 +111,7 @@ function player_moves() {
             sixth_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -118,6 +123,7 @@ function player_moves() {
             seventh_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -129,6 +135,7 @@ function player_moves() {
             eighth_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -140,6 +147,7 @@ function player_moves() {
             nineth_area_check = 'x'
             round = round + 1
             player = false
+            verifyWin('x');
             computer_move()
             return
         }
@@ -155,7 +163,6 @@ function computer_move() {
             fifth_area.innerHTML = 'o'
             round = round + 1
             player = true
-            verifyWin('o')
             player_moves()
         }, 1000)
         return
@@ -183,7 +190,6 @@ function computer_move() {
             return
         }
         console.log(round)
-        verifyWin('o');
         return
     }
     console.log(round)
@@ -196,62 +202,69 @@ function randomArea(randomPlay) {
             first_area.innerHTML = 'o'
         }, 500)
         console.log('1:', first_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 2) {
-        second_area_check = 'o'
         setTimeout(() => {
+            second_area_check = 'o'
             second_area.innerHTML = 'o'
         }, 500)
         console.log('2:', second_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 3) {
-        third_area_check = 'o'
         setTimeout(() => {
+            third_area_check = 'o'
             third_area.innerHTML = 'o'
         }, 500)
-        console.log('3:', third_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 4) {
-        fourth_area_check = 'o'
         setTimeout(() => {
+            fourth_area_check = 'o'
             fourth_area.innerHTML = 'o'
         }, 500)
         console.log('4:', fourth_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 6) {
-        sixth_area_check = 'o'
         setTimeout(() => {
+            sixth_area_check = 'o'
             sixth_area.innerHTML = 'o'
         }, 500)
         console.log('6:', sixth_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 7) {
-        seventh_area_check = 'o'
         setTimeout(() => {
+            seventh_area_check = 'o'
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 8) {
-        eighth_area_check = 'o'
         setTimeout(() => {
+            eighth_area_check = 'o'
             eighth_area.innerHTML = 'o'
         }, 500)
         console.log('8:', eighth_area_check)
+        verifyWin('o')
         return
     }
     if (randomPlay === 9) {
-        nineth_area_check = 'o'
         setTimeout(() => {
+            nineth_area_check = 'o'
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return
     }
 }
@@ -259,155 +272,183 @@ function randomArea(randomPlay) {
 function strategy() {
     console.log('estratégia')
     if (first_area_check === 'x' && second_area_check === 'x' && third_area_check === '') {
-        third_area_check = 'o'
         setTimeout(() => {
+            third_area_check = 'o'
             third_area.innerHTML = 'o'
         }, 500)
         console.log('3:', third_area_check)
+        verifyWin('o')
         return
     }
     if (first_area_check === 'x' && third_area_check === 'x' && second_area_check === '') {
-        second_area_check = 'o'
         setTimeout(() => {
+            second_area_check = 'o'
             second_area.innerHTML = 'o'
         }, 500)
         console.log('2:', second_area_check)
+        verifyWin('o')
         return
     }
     if (first_area_check === 'x' && fourth_area_check === 'x' && seventh_area_check === '') {
-        seventh_area_check = 'o'
         setTimeout(() => {
+            seventh_area_check = 'o'
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        verifyWin('o')
         return
     }
     if (first_area_check === 'x' && fifth_area_check === 'x' && nineth_area_check === '') {
-        nineth_area_check = 'o'
         setTimeout(() => {
+            nineth_area_check = 'o'
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return
     }
     if (first_area_check === 'x' && seventh_area_check === 'x' && fourth_area_check === '') {
-        fourth_area_check = 'o'
         setTimeout(() => {
+            fourth_area_check = 'o' 
             fourth_area.innerHTML = 'o'
         }, 500)
         console.log('4:', fourth_area_check)
+        verifyWin('o')
         return
     }
     if (second_area_check === 'x' && third_area_check === 'x' && first_area_check === '') {
-        first_area_check = 'o'
         setTimeout(() => {
+            first_area_check = 'o'
             first_area.innerHTML = 'o'
         }, 500)
         console.log('1:', first_area_check)
+        verifyWin('o')
         return
     }
     if (second_area_check === 'x' && fifth_area_check === 'x' && eighth_area_check === '') {
-        eighth_area_check = 'o'
         setTimeout(() => {
+            eighth_area_check = 'o'
             eighth_area.innerHTML = 'o'
         }, 500)
         console.log('8:', eighth_area_check)
+        verifyWin('o')
         return
     }
     if (third_area_check === 'x' && sixth_area_check === 'x' && nineth_area_check === '') {
-        nineth_area_check = 'o'
         setTimeout(() => {
+            nineth_area_check = 'o'
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return
     }
     if (third_area_check === 'x' && fifth_area_check === 'x' && seventh_area_check === '') {
-        seventh_area_check = 'o'
         setTimeout(() => {
+            seventh_area_check = 'o'
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        verifyWin('o')
         return
     }
     if (third_area_check === 'x' && nineth_area_check === 'x' && sixth_area_check === '') {
-        sixth_area_check = 'o'
         setTimeout(() => {
+            sixth_area_check = 'o'
             sixth_area.innerHTML = 'o'
         }, 500)
         console.log('6:', sixth_area_check)
+        verifyWin('o')
         return
     }
     if (fourth_area_check === 'x' && fifth_area_check === 'x' && sixth_area_check === '') {
-        sixth_area_check = 'o'
         setTimeout(() => {
+            sixth_area_check = 'o'
             sixth_area.innerHTML = 'o'
         }, 500)
         console.log('6:', sixth_area_check)
+        verifyWin('o')
         return
     }
     if (fourth_area_check === 'x' && seventh_area_check === 'x' && first_area_check === '') {
-        first_area_check = 'o'
         setTimeout(() => {
+            first_area_check = 'o'
             first_area.innerHTML = 'o'
         }, 500)
         console.log('1:', first_area_check)
+        verifyWin('o')
         return
     }
     if (fifth_area_check === 'x' && sixth_area_check === 'x' &&  fourth_area_check === '') {
-        fourth_area_check = 'o'
         setTimeout(() => {
+            fourth_area_check = 'o'
             fourth_area.innerHTML = 'o'
         }, 500)
         console.log('4:', fourth_area_check)
+        verifyWin('o')
         return
     }
     if (fifth_area_check === 'x' && seventh_area_check === 'x' &&  third_area_check === '') {
-        third_area_check = 'o'
         setTimeout(() => {
+            third_area_check = 'o'
             third_area.innerHTML = 'o'
         }, 500)
         console.log('3:', third_area_check)
+        verifyWin('o')
         return
     }
     if (fifth_area_check === 'x' && eighth_area_check === 'x' &&  second_area_check === '') {
-        second_area_check = 'o'
         setTimeout(() => {
+            second_area_check = 'o'
             second_area.innerHTML = 'o'
         }, 500)
         console.log('2:', second_area_check)
+        verifyWin('o')
         return
     }
     if (sixth_area_check === 'x' && nineth_area_check === 'x' && third_area_check === '') {
-        third_area_check = 'o'
         setTimeout(() => {
+            third_area_check = 'o'
             third_area.innerHTML = 'o'
         }, 500)
         console.log('3:', third_area_check)
+        verifyWin('o')
         return
     }
     if (seventh_area_check === 'x' && nineth_area_check === 'x' && eighth_area_check === '') {
-        eighth_area_check = 'o'
         setTimeout(() => {
+            eighth_area_check = 'o'
             eighth_area.innerHTML = 'o'
         }, 500)
         console.log('8:', eighth_area_check)
+        verifyWin('o')
         return
     }
     if (seventh_area_check === 'x' && eighth_area_check === 'x' && nineth_area_check === '') {
-        nineth_area_check = 'o'
         setTimeout(() => {
+            nineth_area_check = 'o'
             nineth_area.innerHTML = 'o'
         }, 500)
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return
     }
     if (nineth_area_check === 'x' && eighth_area_check === 'x' && seventh_area_check === '') {
-        seventh_area_check = 'o'
         setTimeout(() => {
+            seventh_area_check = 'o'
             seventh_area.innerHTML = 'o'
         }, 500)
         console.log('7:', seventh_area_check)
+        verifyWin('o')
+        return
+    }
+    if (nineth_area_check === 'x' && fifth_area_check === 'x' && first_area_check === '') {
+        setTimeout(() => {
+            first_area_check = 'o'
+            first_area.innerHTML = 'o'
+        }, 500)
+        console.log('7:', seventh_area_check)
+        verifyWin('o')
         return
     }
     let again = true;
@@ -460,171 +501,150 @@ function strategy() {
 function verifyPossibleWin() {
     if (first_area_check === 'o' && fifth_area_check === 'o' && nineth_area_check === '') {
         nineth_area_check = 'o'
-        setTimeout(() => {
-            nineth_area.innerHTML = 'o'
-        }, 500)
+        nineth_area.innerHTML = 'o'
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return true
     }
     if (fifth_area_check === 'o' && nineth_area_check === 'o' && first_area_check === '') {
         first_area_check = 'o'
-        setTimeout(() => {
-            first_area.innerHTML = 'o'
-        }, 500)
+        first_area.innerHTML = 'o'
         console.log('1:', first_area_check)
+        verifyWin('o')
         return true
     }
     if (third_area_check === 'o' && fifth_area_check === 'o' && seventh_area_check === '') {
         seventh_area_check = 'o'
-        setTimeout(() => {
-            seventh_area.innerHTML = 'o'
-        }, 500)
+        seventh_area.innerHTML = 'o'
         console.log('7:', seventh_area_check)
+        verifyWin('o')
         return true
     }
     if (seventh_area_check === 'o' && fifth_area_check === 'o' && third_area_check === '') {
         third_area_check = 'o'
-        setTimeout(() => {
-            third_area.innerHTML = 'o'
-        }, 500)
+        third_area.innerHTML = 'o'
         console.log('3:', third_area_check)
+        verifyWin('o')
         return true
     }
     if (second_area_check === 'o' && fifth_area_check === 'o' && eighth_area_check === '') {
         eighth_area_check = 'o'
-        setTimeout(() => {
-            eighth_area.innerHTML = 'o'
-        }, 500)
+        eighth_area.innerHTML = 'o'
         console.log('8:', eighth_area_check)
+        verifyWin('o')
         return true
     }
     if (eighth_area_check === 'o' && fifth_area_check === 'o' && second_area_check === '') {
         second_area_check = 'o'
-        setTimeout(() => {
-            second_area.innerHTML = 'o'
-        }, 500)
+        second_area.innerHTML = 'o'
         console.log('2:', second_area_check)
+        verifyWin('o')
         return true
     }
     if (fourth_area_check === 'o' && fifth_area_check === 'o' && sixth_area_check === '') {
         sixth_area_check = 'o'
-        setTimeout(() => {
-            sixth_area.innerHTML = 'o'
-        }, 500)
+        sixth_area.innerHTML = 'o'
         console.log('6:', sixth_area_check)
+        verifyWin('o')
         return true
     }
     if (sixth_area_check === 'o' && fifth_area_check === 'o' && fourth_area_check === '') {
         fourth_area_check = 'o'
-        setTimeout(() => {
-            fourth_area.innerHTML = 'o'
-        }, 500)
+        fourth_area.innerHTML = 'o'
         console.log('4:', fourth_area_check)
+        verifyWin('o')
         return true
     }
 
     if (first_area_check === 'o' && second_area_check === 'o' && third_area_check === '') {
         third_area_check = 'o'
-        setTimeout(() => {
-            third_area.innerHTML = 'o'
-        }, 500)
+        third_area.innerHTML = 'o'
         console.log('3:', third_area_check)
+        verifyWin('o')
         return true
     }
     if (first_area_check === 'o' && third_area_check === 'o' && second_area_check === '') {
         second_area_check = 'o'
-        setTimeout(() => {
-            second_area.innerHTML = 'o'
-        }, 500)
+        second_area.innerHTML = 'o'
         console.log('2:', second_area_check)
+        verifyWin('o')
         return true
     }
     if (first_area_check === 'o' && fourth_area_check === 'o' && seventh_area_check === '') {
         seventh_area_check = 'o'
-        setTimeout(() => {
-            seventh_area.innerHTML = 'o'
-        }, 500)
+        seventh_area.innerHTML = 'o'
         console.log('7:', seventh_area_check)
+        verifyWin('o')
         return true
     }
     if (first_area_check === 'o' && fifth_area_check === 'o' && nineth_area_check === '') {
         nineth_area_check = 'o'
-        setTimeout(() => {
-            nineth_area.innerHTML = 'o'
-        }, 500)
+        nineth_area.innerHTML = 'o'
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return true
     }
     if (first_area_check === 'o' && seventh_area_check === 'o' && fourth_area_check === '') {
         fourth_area_check = 'o'
-        setTimeout(() => {
-            fourth_area.innerHTML = 'o'
-        }, 500)
+        fourth_area.innerHTML = 'o'
         console.log('4:', fourth_area_check)
+        verifyWin('o')
         return true
     }
     if (second_area_check === 'o' && third_area_check === 'o' && first_area_check === '') {
         first_area_check = 'o'
-        setTimeout(() => {
-            first_area.innerHTML = 'o'
-        }, 500)
+        first_area.innerHTML = 'o'
         console.log('1:', first_area_check)
+        verifyWin('o')
         return true
     }
     if (third_area_check === 'o' && sixth_area_check === 'o' && nineth_area_check === '') {
         nineth_area_check = 'o'
-        setTimeout(() => {
-            nineth_area.innerHTML = 'o'
-        }, 500)
+        nineth_area.innerHTML = 'o'
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return true
     }
     if (third_area_check === 'o' && nineth_area_check === 'o' && sixth_area_check === '') {
         sixth_area_check = 'o'
-        setTimeout(() => {
-            sixth_area.innerHTML = 'o'
-        }, 500)
+        sixth_area.innerHTML = 'o'
         console.log('6:', sixth_area_check)
+        verifyWin('o')
         return true
     }
     if (fourth_area_check === 'o' && seventh_area_check === 'o' && first_area_check === '') {
         first_area_check = 'o'
-        setTimeout(() => {
-            first_area.innerHTML = 'o'
-        }, 500)
+        first_area.innerHTML = 'o'
         console.log('1:', first_area_check)
+        verifyWin('o')
         return
     }
     if (sixth_area_check === 'o' && nineth_area_check === 'o' && third_area_check === '') {
         third_area_check = 'o'
-        setTimeout(() => {
-            third_area.innerHTML = 'o'
-        }, 500)
+        third_area.innerHTML = 'o'
         console.log('3:', third_area_check)
+        verifyWin('o')
         return true
     }
     if (seventh_area_check === 'o' && nineth_area_check === 'o' && eighth_area_check === '') {
         eighth_area_check = 'o'
-        setTimeout(() => {
-            eighth_area.innerHTML = 'o'
-        }, 500)
+        eighth_area.innerHTML = 'o'
         console.log('8:', eighth_area_check)
+        verifyWin('o')
         return true
     }
     if (seventh_area_check === 'o' && eighth_area_check === 'o' && nineth_area_check === '') {
         nineth_area_check = 'o'
-        setTimeout(() => {
-            nineth_area.innerHTML = 'o'
-        }, 500)
+        nineth_area.innerHTML = 'o'
         console.log('9:', nineth_area_check)
+        verifyWin('o')
         return true
     }
     if (nineth_area_check === 'o' && eighth_area_check === 'o' && seventh_area_check === '') {
         seventh_area_check = 'o'
-        setTimeout(() => {
-            seventh_area.innerHTML = 'o'
-        }, 500)
+        seventh_area.innerHTML = 'o'
         console.log('7:', seventh_area_check)
+        verifyWin('o')
         return
     }
     return false
@@ -652,13 +672,16 @@ function verifyWin(play) {
         || seventh_area_check === play && nineth_area_check === play && eighth_area_check === play
         || seventh_area_check === play && eighth_area_check === play && nineth_area_check === play) {
             console.log(play)
-        switch(play) {
-            case 'x':
-                alert('Você ganhou o jogo!\nClique em OK para iniciar um novo jogo');
-            case 'o':
-                alert('Você perdeu o jogo!\nClique em OK para iniciar uma revanche');
-        }
-        return true
+            setTimeout(() => {
+                switch(play) {
+                    case 'x':
+                        alert('Você ganhou o jogo!\nClique em OK para iniciar um novo jogo');
+                    case 'o':
+                        alert('Você perdeu o jogo!\nClique em OK para iniciar uma revanche');
+                }
+                location.reload();
+                return true
+            }, 100)
     }
     return false
 }
