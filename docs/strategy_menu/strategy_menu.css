@@ -97,6 +97,14 @@ h3 {
     color: black;
 }
 
+.botao:disabled {
+    background-color: #d1d0d0;
+}
+
+.botao:disabled:hover {
+    background-color: #d1d0d0;
+}
+
 .botao i{
     margin-right: 8px;
 }
