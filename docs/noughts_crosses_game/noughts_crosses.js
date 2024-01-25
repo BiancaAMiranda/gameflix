@@ -752,13 +752,14 @@ function verifyWin(play) {
                 switch(play) {
                     case 'x':
                         alert('Você ganhou o jogo!\nClique em OK para iniciar um novo jogo');
-                        break
+                        location.reload();
+                        return true
                     case 'o':
                         alert('Você perdeu o jogo!\nClique em OK para iniciar uma revanche');
-                        break
+                        location.reload();
+                        return true
                 }
             }, 100)
-            location.reload();
     } else if(round === 9) {
         setTimeout(() => {
             alert('Deu velha :(\n Clique em OK para iniciar um novo jogo')
