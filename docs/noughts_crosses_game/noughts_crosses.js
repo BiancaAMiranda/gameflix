@@ -169,7 +169,7 @@ function player_moves() {
 function computer_move() {
     console.log('computerMove')
 
-    if(ended === true) {
+    if(endGame === true) {
         console.log('gameover')
         return
     }
@@ -766,15 +766,15 @@ function verifyWin(play) {
                         return true
                 }
             }, 50)
-            return ended = true;
+            return endGame = true;
     } else if(round === 9) {
         setTimeout(() => {
             alert('Deu velha :(\n Clique em OK para iniciar um novo jogo')
             location.reload();
-            return ended = true
+            return endGame = true
         }, 100)
     }
-    return ended = false;
+    return endGame = false;
 }
 
 firstMove();
