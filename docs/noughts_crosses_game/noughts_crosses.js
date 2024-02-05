@@ -21,6 +21,7 @@ let nineth_area_check = '';
 
 let player = true;
 let round = 0
+let endGame = false;
 
 function firstMove() {
     player = confirm('clique em ok se quiser fazer a primeira jogada');
@@ -167,6 +168,11 @@ function player_moves() {
 
 function computer_move() {
     console.log('computerMove')
+
+    if(endGame === true) {
+        console.log('gameover')
+        return
+    }
     if(round === 1 && fifth_area_check === '' && player === false){
         setTimeout(() => {
             fifth_area_check = 'o'
@@ -759,15 +765,16 @@ function verifyWin(play) {
                         location.reload();
                         return true
                 }
-            }, 100)
+            }, 50)
+            return endGame = true;
     } else if(round === 9) {
         setTimeout(() => {
             alert('Deu velha :(\n Clique em OK para iniciar um novo jogo')
             location.reload();
-            return true
+            return endGame = true
         }, 100)
     }
-    return false
+    return endGame = false;
 }
 
 firstMove();
